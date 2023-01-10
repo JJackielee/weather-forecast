@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+    <title>Weather Forecast</title>
+</head>
+<body>
+    <header class="container-fluid bg-dark text-light mb-3 p-4">
+        <h1>Weather</h1>
+    </header>
+    <main>
+        <div class="container-fluid">
+            <div class="row">
+                <!-- search bar goes here -->
+                
+                <div class="col-12 col-lg-3">
+                    
+                        <h2>Search for a city</h2>
+                        <input class="w-100" id="getCity" >
+                        <button class="w-100" id="clickButton">search</button>
+                    
+                    <hr>
+                    <ul>
+                        <li><button class="w-100"> old stuff</button></li>
+                    </ul>
+
+                </div>
+
+                <!-- weather stuff goes here -->
+                <div class="col-12 col-lg-9">
+                    <div class="row">
+                        <div class = "col border m-2">
+                            <h2><span id="city"></span> (<span class="date"></span>)<img class="icon" src="">
+                            </h2>
+                            <p class="temp"></p>
+                            <p class="wind"></p>
+                            <p class="humid"></p>
+                        </div>
+                    </div>
+
+                    <!-- 5 day forcast goes here -->
+                    <div class ="row ">
+                        <h2>5 day forecast</h2>
+                        <div class = "col bg-dark text-light m-1 p-3">
+                            <h3><span class="date"></span></h3>
+                            <img class="icon" src="">
+                            <p class="temp"></p>
+                            <p class="wind"></p>
+                            <p class="humid"></p>
+                        </div>
+                        <div class = "col bg-dark text-light m-1 p-3">
+                            <h3><span class="date"></span></h3>
+                            <img class="icon" src="">
+                            <p class="temp"></p>
+                            <p class="wind"></p>
+                            <p class="humid"></p>
+                        </div>
+                        <div class = "col bg-dark text-light m-1 p-3">
+                            <h3><span class="date"></span></h3>
+                            <img class="icon" src="">
+                            <p class="temp"></p>
+                            <p class="wind"></p>
+                            <p class="humid"></p>
+                        </div>
+                        <div class = "col bg-dark text-light m-1 p-3">
+                            <h3><span class="date"></span></h3>
+                            <img class="icon" src="">
+                            <p class="temp"></p>
+                            <p class="wind"></p>
+                            <p class="humid"></p>
+                        </div>
+                        <div class = "col bg-dark text-light m-1 p-3">
+                            <h3><span class="date"></span></h3>
+                            <img class="icon" src="">
+                            <p class="temp"></p>
+                            <p class="wind"></p>
+                            <p class="humid"></p>
+                        </div>
+                        
+                       
+
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+    </main>
+    
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
+      integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
+      crossorigin="anonymous"
+    ></script>
+    <script src="assets/js/script.js"></script>
+    
+</body>
+</html>
