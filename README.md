@@ -20,7 +20,7 @@ N/A
 - if you want to look up an city that was previously searched click on the button corresponding the city. 
 
 
-[https://jjackielee.github.io/weather-forecast](https://jjackielee.github.io/weather-forcast)
+[https://jjackielee.github.io/weather-forecast](https://jjackielee.github.io/weather-forecast)
 
 ![forecast](assets/images/forecast.png)
 
