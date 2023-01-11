@@ -8,7 +8,7 @@
     <title>Weather Forecast</title>
 </head>
 <body>
-
+    <!-- html structure that was build using bootstrap -->
     <header class="container-fluid bg-dark text-light mb-3 p-4 text-center">
         <h1>Weather</h1>
     </header>
@@ -26,7 +26,9 @@
                     </form>
                     
                     <hr>
-                    <!-- old searches goes here -->
+                    <!-- old searches
+                    using the id oldlist to reference so i can append li childs into it-->
+                    
                     <ul id="oldList" class="list-group">
                     </ul>
 
@@ -34,7 +36,9 @@
 
                 <!-- weather stuff goes here -->
                 <div id="hideThis" class="col-12 col-lg-9 d-none">
-                    <!-- curreny weather goes here -->
+                    <!-- Currenty weather
+                    using class temp,wind,humid to change content with query selector in js
+                    using id city to change city name in js -->
                     <div class="row">
                         <div class = "col border m-2">
                             <h2><span id="city"></span> (<span class="date"></span>)<img class="icon" src="">
@@ -45,7 +49,8 @@
                         </div>
                     </div>
 
-                    <!-- 5 day forcast goes here -->
+                    <!-- 5 day forecast
+                    using the class temp,wind,humid to grab with query selector-->
                     <div class ="row ">
                         <h2>5 day forecast</h2>
                         <div class = "col bg-dark text-light m-1 p-3">

@@ -1,14 +1,14 @@
 $(document).ready(() => {
 
     var clickButton = $('#clickButton');
-    var oldSearch = JSON.parse(localStorage.getItem("oldCity")) || [];
+    var oldSearch = [];
     createOldList();
 
     //Function that runs when the search button is clicked
-    //takes the input and uses fetch to grab the lon and lat coordinates for the location
-    //put the name, and cordinates into an object so we can store it into local store
-    //runs displayWeather function and passing the lon and lat data
-    //also checks if the list of array already contains the recently searched city. if it does then 
+    //prevents the default action of the form so it doesnt refreshes
+    //it grabs the value in the input area
+    //checks if the input is empty. if so it returns to stop the code
+    //runs displayWeather with the input the user typed in.
     clickButton.on('click', function(event){
         event.preventDefault();
         var input = $('#getCity');
@@ -19,6 +19,16 @@ $(document).ready(() => {
         displayWeather(input.val());
 
     })
+
+
+    //displayWeather function that takes a parameter
+    //uses the parameter to call an API query to get json data on that city input
+    //if the input is not a valid city it will alert user that its not city
+    //if it is a valid city then it will return json data of that city that we got from the weather API
+    //using jquery to grab elements in the HTML we read the json data and put that data in specific element like temp, humidity, and wind
+    //uses a forloop to loop through the 6 days
+    //check if the city that was just entered in the array of Search city. if array doesnt contain the city already then it will add that city into the array
+    //runs CreateOldList function to display the cities that was previously searched up
 
     function displayWeather(cityName){
         fetch("https://api.openweathermap.org/data/2.5/forecast?q="+cityName+"&units=imperial&appid=7a516f1ed38e70e2b0299f025745f5d6")
@@ -33,7 +43,6 @@ $(document).ready(() => {
             }
         })
         .then(function(data) {
-
             $('#city').text(data.city.name);
             for(var i = 0; i<6; i++){
                 var skip = i * 7;
@@ -53,6 +62,12 @@ $(document).ready(() => {
         })
     }
 
+    //createOldList function that display the previous cities that was searched
+    // it first gets the list of old cities from localstorage in a form of an array
+    //loops through the array. and creates a button for each city that was searched
+    //uses a data attribute to store the name of the city searched so we can grab that data to search it again
+    //also gives each button that is created an eventlistener to do something when its clicked
+    // when its clicked it runs the displayWeather function again and pass the city name into the parameters
     function createOldList(){
         oldSearch = JSON.parse(localStorage.getItem("oldCity")) || [];
         $('#oldList').empty();
