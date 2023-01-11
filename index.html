@@ -8,29 +8,33 @@
     <title>Weather Forecast</title>
 </head>
 <body>
-    <header class="container-fluid bg-dark text-light mb-3 p-4">
+
+    <header class="container-fluid bg-dark text-light mb-3 p-4 text-center">
         <h1>Weather</h1>
     </header>
+
     <main>
         <div class="container-fluid">
             <div class="row">
                 <!-- search bar goes here -->
                 
                 <div class="col-12 col-lg-3">
-                    
+                    <form>
                         <h2>Search for a city</h2>
-                        <input class="w-100" id="getCity" >
+                        <input class="w-100" id="getCity" required>
                         <button class="w-100" id="clickButton">search</button>
+                    </form>
                     
                     <hr>
-                    <ul>
-                        <li><button class="w-100"> old stuff</button></li>
+                    <!-- old searches goes here -->
+                    <ul id="oldList" class="list-group">
                     </ul>
 
                 </div>
 
                 <!-- weather stuff goes here -->
-                <div class="col-12 col-lg-9">
+                <div id="hideThis" class="col-12 col-lg-9 d-none">
+                    <!-- curreny weather goes here -->
                     <div class="row">
                         <div class = "col border m-2">
                             <h2><span id="city"></span> (<span class="date"></span>)<img class="icon" src="">
@@ -79,11 +83,7 @@
                             <p class="wind"></p>
                             <p class="humid"></p>
                         </div>
-                        
-                       
-
                     </div>
-
                 </div>
 
 
